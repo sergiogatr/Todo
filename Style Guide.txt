@@ -1,0 +1,20 @@
+COLORS
+------
+
+Body = rgb(6, 35, 59)
+ - Madrid = rgb(154, 21, 91)
+ - Paris = rgb(1, 111, 170)
+ - London = rgb(207, 20, 43)
+ - Rome = rgb(188, 163, 60)
+Header = white
+Footer = white
+main = white
+section = rgb(6, 35, 59) 
+color FOR * = black & white
+
+FONTS
+-----
+
+h1, h2, h3 = Oswald -> https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap
+
+p, h4 = Roboto Mono -> https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap

@@ -1,0 +1,265 @@
+/* jQuery and flex boxes 2021 */
+/* Write the rules of style in an orderly and optimal way */
+
+/* 
+
+COLORS
+------
+
+Body = rgb(6, 35, 59)
+ - Madrid = rgb(154, 21, 91)
+ - Paris = rgb(1, 111, 170)
+ - London = rgb(207, 20, 43)
+ - Rome = rgb(188, 163, 60)
+Header = white
+Footer = white
+main = white
+section = rgb(6, 35, 59) 
+color FOR * = black & white
+
+FONTS
+-----
+
+h1, h2, h3 = Oswald -> https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap
+
+p, h4 = Roboto Mono -> https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap
+
+*/
+
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+
+
+/* Styles */
+h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
+}
+
+p {
+    font-family: 'Roboto Mono', monospace;
+    font-size: small;
+}
+
+img {
+    object-fit: cover;
+}
+
+/* General */
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(6, 35, 59);
+    margin: 0;
+    height: 100vh;
+    display: grid;
+}
+
+header, main, section {
+    display: flex;
+    background-color: white;
+    border: 2px solid black;
+}
+
+
+
+/* Header */
+header {
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    height: 20vh;
+    margin-top: 0;
+}
+
+header img {
+    height: 100%;
+    width: auto;
+}
+
+header img:first-of-type {
+    position: relative;
+    animation: desplazamiento forwards 2s;
+}
+
+/* Main */
+main {
+    display: grid;
+    margin: 0 auto;
+}
+
+
+/* Nav */
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav > h2 {
+    border: 1px solid white;
+    padding: 2rem;
+
+    background-color: rgb(6, 35, 59);
+    color: white;
+}
+
+nav > h2:hover {
+    border: 1px solid black;
+    background-color: white;
+    color: rgb(6, 35, 59);
+}
+
+
+/* Section */
+section {
+    flex-direction: column;
+    text-align: justify;
+
+    padding: 15px;
+    margin: 1rem;
+
+    background-color: rgb(6, 35, 59);
+    color: white;
+    position: relative;
+}
+
+section > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+section > div img:first-child {
+    width: 100%;
+    height: 100%;
+}
+
+section > div img:last-child {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+section > h2 {
+    text-align: center;
+    margin: 6px;
+}
+
+a {
+    color: white;
+    
+    text-decoration: none;
+    text-align: center;
+
+    border: 1px solid white;
+
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+a:hover {
+    background-color: white;
+    color: rgb(6, 35, 59);
+    transition: 0.5s;
+}
+
+
+/* Footer */
+footer::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+footer {
+    background-color: white;
+    padding: 20px;
+    margin-top: 1rem;
+}
+
+footer > h3:last-child {
+    float: right;
+}
+
+footer > h3:first-child {
+    float: left;
+}
+
+
+/* Toggle  */
+.flexible {
+    display: none;
+}
+
+
+/* Media Grid */
+@media only screen and (min-width: 600px) {
+
+    img {
+        height: 100%;
+    }
+
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    main > section:last-child {
+        grid-column: span 2;
+    }
+
+}
+
+@media only screen and (min-width: 1000px) {
+
+    body {
+        gap: 1rem;
+    }
+    
+    nav {
+        flex-direction: column;
+    }
+
+    main {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    main > section:last-child {
+        grid-column: span 1;
+    }
+
+    header {
+        grid-column: span 3;
+    }
+
+    footer {
+        grid-column: span 3;
+    }
+
+}
+
+
+/* Animacion */
+@keyframes desplazamiento {
+    0% {
+        opacity: 0;
+        left: 100%;
+        transform: scale(0.1);
+    }
+
+    100% {
+        opacity: 1;
+        left: 0;
+        transform: scale(1);
+    }
+}
